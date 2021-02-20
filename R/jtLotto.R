@@ -1,9 +1,16 @@
 jtGetLotto <- function(path = "http://www.mbnet.com.pl/dl.txt"){
-  #' Function to read the data from the file / only shiny
+  #' Function to read the data from `http://www.mbnet.com.pl/dl.txt`
   #'
   #' @param path web page storing results
   #'
-  #' @return Returns table with winning numbers with dates
+  #' @return  A list with the following data frames
+  #' \itemize{
+  #'   \item $data - original Lotto numbers
+  #'   \item $helper$prob_tables - historical probablities
+  #'    for numbers selected (from 1 to 49)
+  #'   }
+  #'
+  #' @example jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
   #'
   #' @export
   #'
@@ -60,6 +67,17 @@ jtGetDesiredLotto <- function(table){
   #' @return Returns filtered table containing only
   #'  the combinations selected by the requirements.
   #'
+  #' @examples
+  #'
+  #'  data <- dane$data
+  #'  ids <- jtGetDesiredLotto(data)
+  #'
+  #'  p1 <- data %>%
+  #'   mutate(label = ifelse(
+  #'     id %in% ids, "Desired values", "Rejected"
+  #'    )
+  #'   )
+  #'
   #' @export
   #'
 
@@ -95,6 +113,8 @@ jtEnhanceLotto <- function(table){
   #'
   #' @return Returns table with additional features describing time.
   #'
+  #' @examples jtGetLotto()$data %>% jtEnhanceLotto()
+  #'
   #' @export
   #'
 
@@ -127,6 +147,31 @@ predictLotto <- function(data){
   #' @param table preprocessed Lotto data
   #'
   #' @return Returns table with Lotto predictions.
+  #'
+  #' @examples
+  #'
+  #'  data_list <- model$data_full %>%
+  #'   mutate(n = 1) %>%
+  #'   rbind(model$data_full %>%
+  #'    mutate(n = 2)) %>%
+  #'   nest(data = c(-n))
+  #'
+  #'   future::plan(sequential)
+  #'   future::plan(multicore)
+  #'
+  #'   predictions <- data_list %>%
+  #'       dplyr::mutate(
+  #'             prediction = furrr::future_pmap(
+  #'                     list(n, data),
+  #'                             ~ predictLotto(..2)
+  #'                                   )
+  #'                                       )
+  #'
+  #'   future::plan(sequential)
+  #'   preds <- data.frame(matrix(unlist(predictions$prediction),
+  #'    nrow=length(predictions$prediction),
+  #'    byrow=TRUE)) %>%
+  #'   setNames(colnames(predictions$data[[1]]))
   #'
   #' @export
   #'

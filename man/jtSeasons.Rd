@@ -15,5 +15,23 @@ Returns summarised table
 \description{
 Function to summarise preprocessed timeseries.
 }
+\examples{
+
+clean <- table \%>\%
+ jtClean(
+  date = input$data,
+  sales = input$sales,
+  product = FALSE,
+  min_date,
+  max_date
+  )
+
+totals <- clean \%>\%
+ jtTotals()
+
+seasons <- totals \%>\%
+ jtSeasons()
+
+}
 \keyword{data}
 \keyword{processing}

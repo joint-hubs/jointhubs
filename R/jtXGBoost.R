@@ -6,6 +6,20 @@ jtXGBoost <- function(clean){
   #'
   #' @return Returns table with predictions.
   #'
+  #' @examples
+  #'
+  #' clean <- table %>%
+  #' jtClean(
+  #'  date = input$data,
+  #'  sales = input$sales,
+  #'  product = FALSE,
+  #'  min_date,
+  #'  max_date
+  #'  )
+  #'
+  #' xgbData <- clean %>%
+  #' jtXGBoost()
+  #'
   #' @export
   #'
 

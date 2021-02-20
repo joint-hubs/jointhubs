@@ -5,6 +5,21 @@
 #' @param sales name of the column containing sales values
 #' @keywords data processing
 #' @return Returns table with additional columns
+#'
+#' @examples
+#'
+#' clean <- table %>%
+#'  jtClean(
+#'   date = input$data,
+#'   sales = input$sales,
+#'   product = FALSE,
+#'   min_date,
+#'   max_date
+#'   )
+#'
+#' table <- clean %>%
+#'  jtEnhancets(sales = "totals")
+#'
 #' @export
 #'
 

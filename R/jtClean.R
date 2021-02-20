@@ -7,6 +7,18 @@
 #' @param date string with the original name of the column containing product names
 #' @keywords data collection
 #' @return Returns table with proper data structure
+#'
+#' @examples
+#'
+#' jtClean(
+#'  jtRaw(input$raw_file),
+#'  date = input$data,
+#'  sales = input$sales,
+#'  product = FALSE,
+#'  min_date = input$date[1],
+#'  max_date = input$date[2]
+#'  )
+#'
 #' @export
 #'
 

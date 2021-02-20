@@ -20,5 +20,13 @@ Returns customized graph
 \description{
 Function to custiomize ggplots. Dark layout
 }
+\examples{
+
+data \%>\%
+ggplot(aes(distance_index, fill = label)) +
+geom_histogram() +
+jtTheme()
+
+}
 \keyword{data}
 \keyword{visualization}

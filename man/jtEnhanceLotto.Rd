@@ -15,3 +15,7 @@ Returns table with additional features describing time.
 \description{
 Function to enhance Lotto data. Using \code{tk_augment_timeseries_signature()}
 }
+\examples{
+jtGetLotto()$data \%>\% jtEnhanceLotto()
+
+}

@@ -17,5 +17,20 @@ Returns table with additional columns
 \description{
 Function to create multiple features using past values.
 }
+\examples{
+
+clean <- table \%>\%
+ jtClean(
+  date = input$data,
+  sales = input$sales,
+  product = FALSE,
+  min_date,
+  max_date
+  )
+
+table <- clean \%>\%
+ jtEnhancets(sales = "totals")
+
+}
 \keyword{data}
 \keyword{processing}

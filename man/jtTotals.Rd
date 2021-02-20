@@ -15,5 +15,20 @@ Returns table with additional fixed sales value
 \description{
 Function to avoid aggregation if multiple columns are provided
 }
+\examples{
+
+clean <- table \%>\%
+jtClean(
+ date = input$data,
+ sales = input$sales,
+ product = FALSE,
+ min_date,
+ max_date
+ )
+
+ totals <- clean \%>\%
+ jtTotals()
+
+}
 \keyword{data}
 \keyword{processing}

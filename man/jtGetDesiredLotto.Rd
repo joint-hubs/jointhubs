@@ -19,3 +19,15 @@ the combinations selected by the requirements.
 \description{
 Function to extract desired values using quantile()
 }
+\examples{
+
+ data <- dane$data
+ ids <- jtGetDesiredLotto(data)
+
+ p1 <- data \%>\%
+  mutate(label = ifelse(
+    id \%in\% ids, "Desired values", "Rejected"
+   )
+  )
+
+}

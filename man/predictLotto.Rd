@@ -15,3 +15,29 @@ Returns table with Lotto predictions.
 \description{
 Function to run multiple Lotto models. Using \code{jtXGBoost.lotto()}
 }
+\examples{
+
+ data_list <- model$data_full \%>\%
+  mutate(n = 1) \%>\%
+  rbind(model$data_full \%>\%
+   mutate(n = 2)) \%>\%
+  nest(data = c(-n))
+
+  future::plan(sequential)
+  future::plan(multicore)
+
+  predictions <- data_list \%>\%
+      dplyr::mutate(
+            prediction = furrr::future_pmap(
+                    list(n, data),
+                            ~ predictLotto(..2)
+                                  )
+                                      )
+
+  future::plan(sequential)
+  preds <- data.frame(matrix(unlist(predictions$prediction),
+   nrow=length(predictions$prediction),
+   byrow=TRUE)) \%>\%
+  setNames(colnames(predictions$data[[1]]))
+
+}

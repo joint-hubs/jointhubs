@@ -2,7 +2,7 @@
 % Please edit documentation in R/jtLotto.R
 \name{jtGetLotto}
 \alias{jtGetLotto}
-\title{Function to read the data from the file / only shiny}
+\title{Function to read the data from \verb{http://www.mbnet.com.pl/dl.txt}}
 \usage{
 jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
 }
@@ -10,8 +10,13 @@ jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
 \item{path}{web page storing results}
 }
 \value{
-Returns table with winning numbers with dates
+A list with the following data frames
+\itemize{
+\item $data - original Lotto numbers
+\item $helper$prob_tables - historical probablities
+for numbers selected (from 1 to 49)
+}
 }
 \description{
-Function to read the data from the file / only shiny
+Function to read the data from \verb{http://www.mbnet.com.pl/dl.txt}
 }

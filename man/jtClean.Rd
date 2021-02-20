@@ -17,5 +17,17 @@ Returns table with proper data structure
 \description{
 Function to set data structure
 }
+\examples{
+
+jtClean(
+ jtRaw(input$raw_file),
+ date = input$data,
+ sales = input$sales,
+ product = FALSE,
+ min_date = input$date[1],
+ max_date = input$date[2]
+ )
+
+}
 \keyword{collection}
 \keyword{data}

@@ -17,3 +17,18 @@ Returns table with predictions.
 Function to run XGBoost for preprocessed sales data.
 Using \code{xgboost} and \code{mice}
 }
+\examples{
+
+clean <- table \%>\%
+jtClean(
+ date = input$data,
+ sales = input$sales,
+ product = FALSE,
+ min_date,
+ max_date
+ )
+
+xgbData <- clean \%>\%
+jtXGBoost()
+
+}

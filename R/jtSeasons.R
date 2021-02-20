@@ -4,6 +4,24 @@
 #' @param table preprocessed data
 #' @keywords data processing
 #' @return Returns summarised table
+#'
+#' @examples
+#'
+#' clean <- table %>%
+#'  jtClean(
+#'   date = input$data,
+#'   sales = input$sales,
+#'   product = FALSE,
+#'   min_date,
+#'   max_date
+#'   )
+#'
+#' totals <- clean %>%
+#'  jtTotals()
+#'
+#' seasons <- totals %>%
+#'  jtSeasons()
+#'
 #' @export
 #'
 

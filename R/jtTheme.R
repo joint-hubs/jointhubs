@@ -4,6 +4,14 @@
 #' @param table preprocessed data
 #' @keywords data visualization
 #' @return Returns customized graph
+#'
+#' @examples
+#'
+#' data %>%
+#' ggplot(aes(distance_index, fill = label)) +
+#' geom_histogram() +
+#' jtTheme()
+#'
 #' @export
 #'
 
