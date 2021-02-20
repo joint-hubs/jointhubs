@@ -1,6 +1,8 @@
 jtXGBoost <- function(clean){
   #' Function to run XGBoost for preprocessed sales data.
-  #'  Using `xgboost` and `mice`
+  #'
+  #' Flow prepared for enhanced data structure.
+  #' Using `xgboost` and `mice`
   #'
   #' @param table preprocessed data
   #'

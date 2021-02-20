@@ -2,8 +2,7 @@
 % Please edit documentation in R/jtXGBoost.R
 \name{jtXGBoost}
 \alias{jtXGBoost}
-\title{Function to run XGBoost for preprocessed sales data.
-Using \code{xgboost} and \code{mice}}
+\title{Function to run XGBoost for preprocessed sales data.}
 \usage{
 jtXGBoost(clean)
 }
@@ -14,7 +13,7 @@ jtXGBoost(clean)
 Returns table with predictions.
 }
 \description{
-Function to run XGBoost for preprocessed sales data.
+Flow prepared for enhanced data structure.
 Using \code{xgboost} and \code{mice}
 }
 \examples{
