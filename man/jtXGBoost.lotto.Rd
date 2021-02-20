@@ -2,10 +2,7 @@
 % Please edit documentation in R/jtXGBoost.R
 \name{jtXGBoost.lotto}
 \alias{jtXGBoost.lotto}
-\title{Function to run XGBoost for preprocessed Lotto data. Allows to
-use as a target \code{dependent_var} for formula construction. The rest of the
-variables are explanatory.
-Using \code{xgboost}, \code{read.csv("lotto.csv")}}
+\title{Predict Lotto numbers}
 \usage{
 jtXGBoost.lotto(model, dependent_var)
 }

@@ -176,6 +176,8 @@ jtXGBoost <- function(clean){
 
 
 jtXGBoost.lotto <- function(model, dependent_var){
+  #' Predict Lotto numbers
+  #'
   #' Function to run XGBoost for preprocessed Lotto data. Allows to
   #'  use as a target `dependent_var` for formula construction. The rest of the
   #'  variables are explanatory.
