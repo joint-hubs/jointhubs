@@ -23,3 +23,7 @@ use as a target \code{dependent_var} for formula construction. The rest of the
 variables are explanatory.
 Using \code{xgboost}, \code{read.csv("lotto.csv")}
 }
+\examples{
+ jtXGBoost.lotto(model1, "number1")$forecasts
+
+}

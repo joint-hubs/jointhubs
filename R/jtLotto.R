@@ -10,7 +10,8 @@ jtGetLotto <- function(path = "http://www.mbnet.com.pl/dl.txt"){
   #'    for numbers selected (from 1 to 49)
   #'   }
   #'
-  #' @example jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
+  #' @examples
+  #'  jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
   #'
   #' @export
   #'

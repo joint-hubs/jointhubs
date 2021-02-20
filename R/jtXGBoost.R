@@ -186,7 +186,8 @@ jtXGBoost.lotto <- function(model, dependent_var){
   #'
   #' @return Returns table with predictions.
   #'
-  #' @example jtXGBoost.lotto(model1, "number1")$forecasts
+  #' @examples
+  #'  jtXGBoost.lotto(model1, "number1")$forecasts
   #'
   #' @export
   #'

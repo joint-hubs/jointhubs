@@ -20,3 +20,7 @@ for numbers selected (from 1 to 49)
 \description{
 Function to read the data from \verb{http://www.mbnet.com.pl/dl.txt}
 }
+\examples{
+ jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
+
+}
