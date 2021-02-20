@@ -1,5 +1,15 @@
 jtXGBoost <- function(clean){
-  h <- 12
+  #' Function to run XGBoost for preprocessed sales data.
+  #'  Using `xgboost` and `mice`
+  #'
+  #' @param table preprocessed data
+  #'
+  #' @return Returns table with predictions.
+  #'
+  #' @export
+  #'
+
+    h <- 12
 
   set.seed(777)
   xgbData <- list()
@@ -143,10 +153,7 @@ jtXGBoost <- function(clean){
                       #explanator_l1h2, explanator_l1l1,
                       avg_02, avg_03, avg_05, half,
                       quarter, change, week, horizon)
-
     }
-
-
 
   }
 
@@ -155,9 +162,24 @@ jtXGBoost <- function(clean){
 
 
 jtXGBoost.lotto <- function(model, dependent_var){
+  #' Function to run XGBoost for preprocessed Lotto data. Allows to
+  #'  use as a target `dependent_var` for formula construction. The rest of the
+  #'  variables are explanatory.
+  #'  Using `xgboost`, `read.csv("lotto.csv")`
+  #'
+  #' @param model preprocessed data with selected features
+  #' @param dependent_var character with the name of the variable
+  #'
+  #' @return Returns table with predictions.
+  #'
+  #' @example jtXGBoost.lotto(model1, "number1")$forecasts
+  #'
+  #' @export
+  #'
 
   lotto <- read.csv("lotto.csv")
   set.seed(sample(10000, 1))
+
   xgbData <- list()
   xgbData$full_data <- model
   xgbData$train_base <- model %>%

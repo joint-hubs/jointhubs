@@ -7,6 +7,7 @@
 #' @param date string with the original name of the column containing product names
 #' @keywords data collection
 #' @return Returns table with proper data structure
+#' @export
 #'
 
 jtClean <- function(table, date, sales, product, min_date, max_date){

@@ -1,3 +1,12 @@
+#' Theme Set
+#'
+#' Function to custiomize ggplots. Dark layout
+#' @param table preprocessed data
+#' @keywords data visualization
+#' @return Returns customized graph
+#' @export
+#'
+
 jtTheme <- function(base_size = 13,
                     base_family = "",
                     base_line_size = base_size/20,

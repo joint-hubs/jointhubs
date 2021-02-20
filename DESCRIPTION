@@ -1,15 +1,12 @@
 Package: jointhubs
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person(given = "First",
-           family = "Last",
-           role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to
-    pick a license
+Title: App Builder
+Version: 0.1.0.9000
+Authors@R: person("Mateusz","Stachowicz", role = c("aut", "cre"), email = "m.stachowicz@jointhubs.com")
+Description: The package stores functions for all JOINTHUBS applications. 
+License: Apache License Version 2.0
+Imports:
+    ggplot2 (>= 1.0.0),
+    dplyr (>= 0.4.3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

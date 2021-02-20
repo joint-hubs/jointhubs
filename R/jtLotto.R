@@ -1,10 +1,12 @@
-#' Lotto data collection and processing
-#'
-#' Data collected from http://www.mbnet.com.pl/dl.txt
-#'
-
-
 jtGetLotto <- function(path = "http://www.mbnet.com.pl/dl.txt"){
+  #' Function to read the data from the file / only shiny
+  #'
+  #' @param path web page storing results
+  #'
+  #' @return Returns table with winning numbers with dates
+  #'
+  #' @export
+  #'
 
   data <- read.table(path,
                      sep = " ", stringsAsFactors = FALSE) %>%
@@ -48,6 +50,19 @@ jtGetLotto <- function(path = "http://www.mbnet.com.pl/dl.txt"){
 }
 
 jtGetDesiredLotto <- function(table){
+  #' Function to extract desired values using quantile()
+  #'
+  #' @param table preprocessed Lotto data.
+  #'  sum `sum of the numbers sum(from 1 to 6)`
+  #'  sum_of_squares `sum of squared numbers sum(from 1 to 2401)`
+  #'  distance_index `sum_of_squares / sum`
+  #'
+  #' @return Returns filtered table containing only
+  #'  the combinations selected by the requirements.
+  #'
+  #' @export
+  #'
+
   data <- list()
   data$clean_filtered <- table %>%
     filter(distance_index >= quantile(distance_index, .2) & distance_index <= quantile(distance_index, .8)) %>%
@@ -74,6 +89,14 @@ jtGetDesiredLotto <- function(table){
 }
 
 jtEnhanceLotto <- function(table){
+  #' Function to enhance Lotto data. Using `tk_augment_timeseries_signature()`
+  #'
+  #' @param table raw Lotto data
+  #'
+  #' @return Returns table with additional features describing time.
+  #'
+  #' @export
+  #'
 
   model <- list()
   model$raw <- table %>%
@@ -99,7 +122,14 @@ jtEnhanceLotto <- function(table){
 }
 
 predictLotto <- function(data){
-
+  #' Function to run multiple Lotto models. Using `jtXGBoost.lotto()`
+  #'
+  #' @param table preprocessed Lotto data
+  #'
+  #' @return Returns table with Lotto predictions.
+  #'
+  #' @export
+  #'
 
   model1 <- data %>%
     select(-number2, -number3, -number4,

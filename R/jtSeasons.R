@@ -1,3 +1,12 @@
+#' Season Summary
+#'
+#' Function to summarise preprocessed timeseries.
+#' @param table preprocessed data
+#' @keywords data processing
+#' @return Returns summarised table
+#' @export
+#'
+
 jtSeasons <- function(table){
   table <- table %>%
     group_by(year) %>%

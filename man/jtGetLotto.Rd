@@ -2,10 +2,16 @@
 % Please edit documentation in R/jtLotto.R
 \name{jtGetLotto}
 \alias{jtGetLotto}
-\title{Lotto data collection and processing}
+\title{Function to read the data from the file / only shiny}
 \usage{
 jtGetLotto(path = "http://www.mbnet.com.pl/dl.txt")
 }
+\arguments{
+\item{path}{web page storing results}
+}
+\value{
+Returns table with winning numbers with dates
+}
 \description{
-Data collected from http://www.mbnet.com.pl/dl.txt
+Function to read the data from the file / only shiny
 }

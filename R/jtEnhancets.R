@@ -1,3 +1,13 @@
+#' Enhancing timeseries
+#'
+#' Function to create multiple features using past values.
+#' @param table whole data
+#' @param sales name of the column containing sales values
+#' @keywords data processing
+#' @return Returns table with additional columns
+#' @export
+#'
+
 jtEnhancets <- function(table, sales = "Sprzedaz"){
 
   table <- table %>%

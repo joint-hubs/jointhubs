@@ -1,3 +1,12 @@
+#' Totals calculation
+#'
+#' Function to avoid aggregation if multiple columns are provided
+#' @param clean preprocessed data
+#' @keywords data processing
+#' @return Returns table with additional fixed sales value
+#' @export
+#'
+
 jtTotals <- function(clean){
   table <- clean %>%
     group_by(Data) %>%
