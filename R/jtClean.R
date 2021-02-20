@@ -1,4 +1,4 @@
-#' Feature labelling
+#' Table structure recognition
 #'
 #' Function to set data structure
 #' @param table whole data

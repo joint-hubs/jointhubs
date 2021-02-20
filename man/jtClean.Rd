@@ -2,7 +2,7 @@
 % Please edit documentation in R/jtClean.R
 \name{jtClean}
 \alias{jtClean}
-\title{Feature labelling}
+\title{Table structure recognition}
 \usage{
 jtClean(table, date, sales, product, min_date, max_date)
 }

@@ -1,12 +1,9 @@
 Package: jointhubs
 Title: App Builder
-Version: 0.1.0.9000
+Version: 1.0
 Authors@R: person("Mateusz","Stachowicz", role = c("aut", "cre"), email = "m.stachowicz@jointhubs.com")
 Description: The package stores functions for all JOINTHUBS applications. 
 License: Apache License Version 2.0
-Imports:
-    ggplot2 (>= 1.0.0),
-    dplyr (>= 0.4.3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
